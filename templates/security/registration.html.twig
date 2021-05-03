@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+body{
+        background-color:slategrey;
+    }
+h2{
+    text-align:center;
+    color:white;
+}
+
+.card{
+    margin-top:70px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width:40%;
+    padding-right:55px;
+    padding-left:55px;
+    height:50%;  
+}
+
+
+.btn,.btn:hover{
+    margin-left:40%;
+    background-color: #B01717 ;
+    color: white;
+}
+.title{
+    font-size:20px ;
+    font-weight:500;
+    text-align:center;
+    
+}
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 80%;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px 2px;
+  border-radius: 50px;
+}
+
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-google {
+  background: #972010;
+  color: white;
+}
+
+.icon{
+    margin-left: 15%; 
+}
+
+</style>
+
+
+<style> 
+.jumbotron{
+           text-align:center;
+         
+}
+</style>
+
+
+<div id="entete">
+     
+<div class="jumbotron">
+  
+  <h1 class="display-3"> 
+Créer un compte</h1>
+  
+</div>
+
+</div>
+
+<div class=" container formulaire card">
+<br>    
+        <div class=" title">
+        <p> Veuillez renseigner le formulaire attentivement</p>
+        </div>
+        <hr>
+        {{ form_start(form) }}
+
+        {{ form_row(form.civilite,{
+            'attr':{
+            'placeholder': 'civilite ...',
+            'class':'form-control' 
+        }}) }}
+
+        {{ form_row(form.nom,{
+            'attr':{
+                'placeholder': 'Entrer un name ...',
+                'class':'form-control',
+                'label':'Nom d\'utilisateur' }
+        }) }}
+
+        {{ form_row(form.prenom,{
+            'attr':{
+                'placeholder': 'Votre prenom ...',
+                'class':'form-control'
+         }}) }}
+
+        {{ form_row(form.date_de_naissance,{
+            'attr':{
+                'placeholder': 'Entrer votre date de naissance ...',
+                'class':'form-control'
+        }}) }}
+
+        {{ form_row(form.numero,{
+            'attr':{
+                'placeholder': 'Numero WhatsApp ...',
+                'class':'form-control'
+         }}) }}
+
+        {{ form_row(form.email,{
+            'attr':{
+                'placeholder': 'Adresse email ...',
+                'class':'form-control'
+        }}) }}
+
+        {{ form_row(form.password,{
+            'attr':{
+                'placeholder': 'entrer un mot de passe ...',
+                'class':'form-control'
+         }}) }}
+
+        {{ form_row(form.confirm_password,{
+            'attr':{
+                'placeholder': 'entrer à nouveau un mot de passe',
+                'class':'form-control'
+        }}) }}
+        <br>
+        <button type="submit" class="btn">Inscription !</button>
+        {{ form_end(form) }} 
+   
+    <h6> déjà inscrit ? <a href="/connexion"> connectez - vous</a> </h6>
+   
+        <div> 
+            <div class="row icon">
+                <div class="col-md-12"><a href="#" class="fa fa-google"> se connecter</a></div>
+                <div class="col-md-12"><a href="#" class="fa fa-facebook"> se connecter</a></div>
+            </div>
+        </div>
+<br>
+</div>
+<br><br>
+{% endblock %}

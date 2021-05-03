@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body%}
+
+
+<style> 
+.jumbotron{
+           text-align:center;         
+}
+
+.boutton1{
+  color: white;
+}
+</style>
+
+
+
+<div id="entete">
+     
+<div class="jumbotron">
+  
+  <h1 class="display-3"> 
+Personnalisation</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+
+</div>
+ <br>
+</div>
+<br>
+
+<section id="formulaire">
+
+<div class="container card">
+  <h2>Veuillez renseigner le formulaire</h2>
+  {{ form_start(formPersonnaliser) }}
+
+  {{ form_row(formPersonnaliser.nom) }}
+  {{ form_row(formPersonnaliser.email) }}
+  {{ form_row(formPersonnaliser.numero_whatsapp) }}
+    {{ form_row(formPersonnaliser.messages,{'attr':{
+                'placeholder': 'ecrivez Votre préocupation ...',
+                'label':'Messages'
+               
+         }}  )}}
+
+
+  <br>
+  <button type="submit" class="btn boutton1">Envoyer !</button>
+  {{ form_end(formPersonnaliser) }} 
+</div>
+<br><br>
+</section>
+
+
+
+{% endblock body%}

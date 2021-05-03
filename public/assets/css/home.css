@@ -1,0 +1,120 @@
+
+.active{
+    color:red !important;
+}
+.navbar{
+    background-color: #6C0D0D !important;
+    
+    padding-left: 20px;
+}
+a{
+color: white !important;
+}
+.a .btn{
+  background-color: none;
+}
+
+.nav-link{
+    font-weight: 500;
+}
+
+.image{
+  width:30px;
+   height:50px
+}
+.dropdown-item{
+  color: black !important;
+}
+.publier{
+ margin-left: 50%;
+}
+
+.jumbotron{
+         background-color: #6C0D0D !important;
+         color: white;
+         padding-left: 50px;
+         padding-bottom: 20px;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+           
+}
+     
+
+.boutton2{
+    margin:10px;
+    background-color: #B01717 !important;
+    padding: 15px 20px 15px 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.boutton1{
+  background-color: #E32F2F !important;
+  border: none;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   padding: 15px 20px 15px 20px;
+   
+}
+.h1{
+ font-weight: 800;
+}
+
+
+.card-img-top{
+    height: 500px;
+    width: 410px;
+    
+    margin-left: 35%;
+  }
+  .grand{
+      background-color: rgb(221, 225, 230);
+      
+  }
+  h5{
+      padding-top: 50px;
+    margin-left: 45px;
+  }
+  .photo_description{
+      margin-left: 30%;
+  }
+  .dimension{
+      background-color: black;
+      color: white;
+      margin-left: 50px;
+      padding-left:20px;
+      width:70%;
+      padding-top:10px;
+  }
+  .telecharger,.telecharger:hover{
+    margin:5px;
+      background-color:tomato  !important;
+      padding: 15px 20px 15px 20px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      color: white;
+      border-radius: 10px;
+  }
+  .like, .like:hover{
+    margin:5px;
+      background-color:rgb(131, 60, 50)  !important;
+      padding: 15px 20px 15px 20px;
+     
+      color: white;
+      
+  }
+  .card-caracteristique{
+    background-color: rgb(172, 181, 190);
+    padding:10px;
+    font-weight: 500;
+    margin-left: 15%;
+  
+    width: 80%;
+  }
+  .card-paiement{
+    background-color: rgb(131, 60, 50);
+    padding:10px;
+  align-content: center;
+    margin-left: 15%;
+  color: white;
+    width: 80%;
+  }
+  .icon-etoile{
+    margin-left: 30%;
+    margin-top: 20px;
+  }
