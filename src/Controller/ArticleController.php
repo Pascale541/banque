@@ -41,7 +41,7 @@ class ArticleController extends AbstractController
 
                 $img=new Image();
                 $img->setName($fichier);
-                $article->addImage($img);
+                $article->addImage($img);    
             }
             
             $entityManager = $this->getDoctrine()->getManager();

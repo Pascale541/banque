@@ -44,9 +44,15 @@ class Article
      */
     private $images;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Categories::class, mappedBy="Articles")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,6 +132,36 @@ class Article
             // set the owning side to null (unless already changed)
             if ($image->getArticles() === $this) {
                 $image->setArticles(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Categories[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Categories $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setArticles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categories $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getArticles() === $this) {
+                $category->setArticles(null);
             }
         }
 
