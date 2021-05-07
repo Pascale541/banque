@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Article;
+use App\Repository\ArticleRepository;
+use App\Repository\ImageRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BlogController extends AbstractController
 {
@@ -27,9 +30,12 @@ class BlogController extends AbstractController
 
 
     #[Route('/photographie', name: 'photographie')]
-    public function photographie(): Response
+    public function photographie(ArticleRepository $articleRepository ,ImageRepository $imageRepository): Response
     {
-        return $this->render('blog/photographie.html.twig');
+        return $this->render('blog/photographie.html.twig',[
+            'Articles'=> $articleRepository-> LastFree(),
+            'Images'=> $imageRepository-> Lastree()
+        ]);
         
     }
 
@@ -48,10 +54,14 @@ class BlogController extends AbstractController
     }
 
 
-    #[Route('/photo/12', name: 'photo_show')]
-    public function photo_show(): Response
+    #[Route('/photo/{id}', name: 'photo_show')]
+    public function photo_show($id): Response
     {
-        return $this->render('blog/photo.html.twig');
+        $repo =$this->getDoctrine()->getRepository(Article::class);
+        $article = $repo->find($id);
+        return $this->render('blog/photo.html.twig',[
+            'Articles'=> $article 
+        ]);
         
     }
 

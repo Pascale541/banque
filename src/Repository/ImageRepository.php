@@ -19,6 +19,18 @@ class ImageRepository extends ServiceEntityRepository
         parent::__construct($registry, Image::class);
     }
 
+     /**
+     * @return Image[]
+     */
+
+    public function Lastree(){
+        return $this->createQueryBuilder('p')
+                ->orderBy('p.id', 'DESC')
+                ->setMaxResults(3)
+                ->getQuery()
+                ->getResult();
+     }
+
     // /**
     //  * @return Image[] Returns an array of Image objects
     //  */
